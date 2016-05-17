@@ -7,8 +7,6 @@ public class TestJava {
 	}
 
 	public void test() {
-
-
 		System.out.println("END");
 	}
 }
