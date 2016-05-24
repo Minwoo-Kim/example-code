@@ -1,9 +1,11 @@
 /**
  * 
  */
-package com.example.code.java.java7;
+package com.example.code.java.basic;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,13 +14,13 @@ import java.nio.file.Paths;
  * @author Minu.Kim
  *
  */
-public class ReadFileEx {
+public class FileEx {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ReadFileEx rfe = new ReadFileEx();
+		FileEx rfe = new FileEx();
 		rfe.readFile();
 
 	}
@@ -40,6 +42,30 @@ public class ReadFileEx {
 					e.printStackTrace();
 				}
 			}
+		}
+	}
+
+	/**
+	 * File 생성.
+	 * 
+	 * @param module
+	 * @param entity
+	 * @param content
+	 */
+	public void createFile(String dirPath, String fileName, String content) {
+		// Directory 생성
+		File dir = new File(dirPath);
+		if (!dir.exists())
+			dir.mkdirs();
+
+		if (!dirPath.endsWith(File.separator))
+			dirPath += File.separator;
+
+		File file = new File(dirPath + fileName);
+		try (FileWriter fileWriter = new FileWriter(file); BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+			bufferedWriter.write(content);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
