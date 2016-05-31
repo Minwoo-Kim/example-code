@@ -70,6 +70,13 @@ dependencies {
 	compile("org.apache.tomcat.embed:tomcat-embed-logging-juli:${embedTomcatVersion}")
 	compile("org.apache.tomcat.embed:tomcat-embed-websocket:${embedTomcatVersion}")
 	
+	// Json-Simple
+	compile("com.googlecode.json-simple:json-simple:1.1.1")
+	// GSON
+	compile("com.google.code.gson:gson:2.5")
+	
+	compile("commons-lang:commons-lang:2.6")
+	
 	// JUnit
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
