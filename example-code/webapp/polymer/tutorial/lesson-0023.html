@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Polymer Tutorial - Templates with polymer, dom-repeat</title>
+
+    <base href="http://polygit.org/components/">
+
+    <script src="webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="polymer/polymer.html">
+  </head>
+
+  <body>
+
+    <template id="template" is="dom-bind">
+
+      <template is="dom-repeat" items="[[greetings]]">
+        <p>[[index]]: Hello, [[item]]</p>
+      </template>
+
+    </template>
+
+    <button>Change Greetings</button>
+
+    <script>
+      var template = document.querySelector("#template")
+      template.greetings = [
+        "Ladies",
+        "Gentlemen"
+      ]
+
+      document.querySelector("button").addEventListener("click", function() {
+        template.greetings = [
+          "Girls",
+          "Boys"
+        ]
+      })
+    </script>
+
+  </body>
+</html>

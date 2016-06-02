@@ -1,0 +1,48 @@
+<dom-module id="x-custom">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .red {
+        background-color: red;
+      }
+    </style>
+
+    <content select="div"></content>
+
+    <div>Local DOM #1</div>
+    <div>Local DOM #2</div>
+    <div>Local DOM #3</div>
+    <div>Local DOM #4</div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'x-custom',
+
+      listeners: {
+        'tap': '_onTap'
+      },
+
+      _onTap: function(e) {
+        if(e.target.tagName !== 'DIV')
+          return
+
+        /*
+         * 이전에 선택되어있는 DIV를 찾는다.
+         * LightDOM에서 먼저 찾아보고, 다시 LocalDOM에서 찾는다.
+         */
+        var old = Polymer.dom(this).querySelector('div.red')
+        if(!old)
+          old = this.$$('div.red')
+
+        this.classFollows('red', e.target, old)
+      }
+
+    });
+  </script>
+</dom-module>

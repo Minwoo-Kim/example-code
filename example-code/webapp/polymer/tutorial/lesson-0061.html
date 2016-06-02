@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Polymer Tutorial - Utility Function toggleClass </title>
+
+    <base href="http://polygit.org/things-tutorials+ThingsElements+*/components/">
+
+    <script src="webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="polymer/polymer.html">
+
+    <link rel="import" href="things-tutorials/lesson-0061-component.html">
+
+    <style>
+      x-custom {
+        padding: 20px;
+      }
+
+      .red {
+        background-color: orange;
+      }
+
+      .navy {
+        background-color: navy;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>Utility Function toggleClass</p>
+    
+    <ul>
+      <li>Light DOM과 Local DOM 라인을 클릭해서, 라인의 배경색이 토글되는 것을 확인.</li>
+      <li>Turn Background 버튼을 클릭해서, 전체 배경색이 토글되는 것을 확인.</li>
+    </ul>
+    
+    <x-custom>
+      <div>Light DOM #1</div>
+      <div>Light DOM #2</div>
+      <div>Light DOM #3</div>
+      <div>Light DOM #4</div>
+    </x-custom>
+
+    <button>Turn Background</button>
+
+    <a href="https://www.polymer-project.org/1.0/docs/devguide/utility-functions.html">Polymer</a>
+
+    <script>
+      var custom = document.querySelector("x-custom")
+      var button = document.querySelector("button")
+
+      button.addEventListener("click", function() {
+        custom.toggleClass("navy")
+      })
+    </script>
+
+  </body>
+</html>
