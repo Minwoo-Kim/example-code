@@ -76,6 +76,7 @@ dependencies {
 	compile("com.google.code.gson:gson:2.5")
 	
 	compile("commons-lang:commons-lang:2.6")
+	compile("org.apache.commons:commons-io:1.3.2")
 	
 	// JUnit
     testCompile('org.springframework.boot:spring-boot-starter-test')

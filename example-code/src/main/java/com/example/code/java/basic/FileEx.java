@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.apache.commons.io.IOUtils;
+import org.springframework.core.io.ClassPathResource;
+
 /**
  * @author Minu.Kim
  *
@@ -43,6 +46,17 @@ public class FileEx {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * File 내용 불러오기 실행. 
+	 * 
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
+	public static String readClassPathResource(String path) throws IOException {
+		return IOUtils.toString(new ClassPathResource(path.trim()).getInputStream(), "UTF-8");
 	}
 
 	/**
