@@ -51,4 +51,27 @@ public class ReflectEx {
 		} while (!entityClass.isAssignableFrom(Object.class));
 		return instance;
 	}
+	
+	/**
+	 * 객체 내의 Field 값 가져오기를 실행.
+	 * 
+	 * @param instance
+	 * @param sourceClass
+	 * @param fieldName
+	 * @return
+	 */
+	public Object getFieldValue(Object instance, Class<?> sourceClass, String fieldName) {
+		Field field = FieldUtils.getField(sourceClass, fieldName, true);
+		//Field field = FieldUtils.getDeclaredField(sourceClass, fieldName, true);
+		if (field == null) {
+			return null;
+		}
+
+		Object value = null;
+		try {
+			return field.get(instance);
+		} catch (Exception e) {
+			return value;
+		}
+	}
 }
