@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Elidom-Base
-Implementation-Version: 0.0.1-SNAPSHOT
-Main-Class: xyz.elidom.base.ElidomBaseApplication
-
