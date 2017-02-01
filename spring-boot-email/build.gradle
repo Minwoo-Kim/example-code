@@ -8,7 +8,7 @@ buildscript {
 				username 'admin'
 				password 'elidom'
 			}
-			url 'http://188.166.183.86:8081/content/groups/elidom-repository/'
+			url 'http://188.166.183.86:8081/nexus/content/groups/elidom-repository/'
 			//maven { url 'http://repo.spring.io/plugins-release' }
 		}
 	}
@@ -53,7 +53,7 @@ repositories {
 				username 'admin'
 				password 'elidom'
 			} 
-		url 'http://188.166.183.86:8081/content/groups/elidom-repository/' 
+		url 'http://188.166.183.86:8081/nexus/content/groups/elidom-repository/' 
 	}
 	// maven { url 'http://repo.spring.io/plugins-release' }
 }
@@ -67,7 +67,7 @@ dependencies {
 uploadArchives {
 	repositories {
 		mavenDeployer {
-			repository(url: "http://188.166.183.86:8081/content/repositories/jar_deployed/") {
+			repository(url: "http://188.166.183.86:8081/nexus/content/repositories/jar_deployed/") {
 				authentication (userName: "admin", password: "elidom")
 			}
 			pom.version = "1.0"
