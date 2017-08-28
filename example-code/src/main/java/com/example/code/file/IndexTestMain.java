@@ -7,8 +7,7 @@ import java.io.FileWriter;
 import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.mockito.internal.util.StringJoiner;
+import java.util.StringJoiner;
 
 public class IndexTestMain {
 	private String ROOT_PATH = "C:/MachineData/MES";
