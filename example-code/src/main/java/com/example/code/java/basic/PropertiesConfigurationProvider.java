@@ -1,4 +1,4 @@
-package com.example.code.utils;
+package com.example.code.java.basic;
 
 import java.io.BufferedReader;
 import java.io.File;
