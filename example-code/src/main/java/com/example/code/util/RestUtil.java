@@ -81,7 +81,7 @@ public class RestUtil {
 	 * @return
 	 */
 	public void delete(String url, Map<String, ?> parameters) {
-		delete(url, parameters);
+		delete(url, parameters, null, null);
 	}
 
 	public void delete(String url, Map<String, ?> parameters, String userId, String password) {
