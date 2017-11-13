@@ -9,9 +9,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class DateUtil {
+public class DateUTCSample {
 	public static void main(String[] args) {
-		DateUtil.getUTCTime();
+		DateUTCSample.getUTCTime();
 	}
 	
 	
@@ -80,5 +80,4 @@ public class DateUtil {
 		System.out.format("%s%n%s%n%n", tz.getDisplayName(), df.format(date));
 
 	}
-
 }

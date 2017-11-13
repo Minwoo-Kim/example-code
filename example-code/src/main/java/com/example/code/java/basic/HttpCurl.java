@@ -13,31 +13,7 @@ import org.apache.commons.io.IOUtils;
 
 public class HttpCurl {
 	public static void main(String[] args) {
-		String userName = "admin";
-		String password = "elidom";
-
-		String path = "http://repo.hatiolab.com/nexus/service/local/repositories/jar_deployed/content/com/hatiolab/elings-boot/2.1.0.1/elings-boot-2.1.0.1.jar";
-
-		try {
-			String userPass = userName + ":" + password;
-			String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userPass.getBytes()));
-
-			URL url = new URL(path.toString());
-
-			URLConnection connection = url.openConnection();
-
-			connection.setRequestProperty("Authorization", basicAuth);
-			connection.setRequestProperty("X-Requested-With", "Curl");
-
-			InputStream inputStream = connection.getInputStream();
-
-			File targetFile = new File("/Users/minu/Downloads/sample.jar");
-			Files.copy(inputStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-			IOUtils.closeQuietly(inputStream);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	public void copyInputStreamToFile() {
