@@ -21,29 +21,36 @@ dependencies {
 	  	exclude module: "spring-boot-starter-tomcat"
 	}
     
+    // Embed Tomcat
+    compile("org.apache.tomcat.embed:tomcat-embed-core:${embedTomcatVersion}")
+    compile("org.apache.tomcat.embed:tomcat-embed-el:${embedTomcatVersion}")
+    compile("org.apache.tomcat.embed:tomcat-embed-logging-juli:${embedTomcatVersion}")
+    compile("org.apache.tomcat.embed:tomcat-embed-websocket:${embedTomcatVersion}")
+    
     // JDBC
     compile("commons-dbcp:commons-dbcp:1.4")
 	compile("org.springframework:spring-jdbc:4.3.6.RELEASE")
-//	compile("org.springframework:spring-context-support:4.3.6.RELEASE")
-    
-    // Embed Tomcat
-	compile("org.apache.tomcat.embed:tomcat-embed-core:${embedTomcatVersion}")
-	compile("org.apache.tomcat.embed:tomcat-embed-el:${embedTomcatVersion}")
-	compile("org.apache.tomcat.embed:tomcat-embed-logging-juli:${embedTomcatVersion}")
-	compile("org.apache.tomcat.embed:tomcat-embed-websocket:${embedTomcatVersion}")
+	//	compile("org.springframework:spring-context-support:4.3.6.RELEASE")
 	
-	// Json-Simple
-	compile("com.googlecode.json-simple:json-simple:1.1.1")
-	// GSON
-	compile("com.google.code.gson:gson:2.5")
-	
-	// Cassandra
-	compile("com.datastax.cassandra:cassandra-driver-core:3.3.0")
-	
-	// Cassandra JDBC
+	// Cassandra - Use Thrift Port
 	compile("org.apache.cassandra:cassandra-all:3.11.1")
 	compile("org.apache-extras.cassandra-jdbc:cassandra-jdbc:1.2.5")
+	//	compile("org.apache.thrift:libthrift:0.10.0")
+	
+	// Cassandra - Use Cassandra Client Port
+	compile("com.hatiolab.cassandra:cassandrajdbc:1.1")
+	compile("com.datastax.cassandra:cassandra-driver-core:3.3.0")
+	compile("com.datastax.cassandra:cassandra-driver-extras:3.3.0")
+	compile("com.datastax.cassandra:cassandra-driver-mapping:3.3.0")
+	//	compile("org.hdrhistogram:HdrHistogram:2.1.9")
+	//	compile("io.netty:netty-all:4.1.0.Beta5")
+	//	compile("io.netty:netty-transport-native-epoll:4.1.0.Beta5")
+	//	compile("org.xerial.snappy:snappy-java:1.1.2.6")
 
+	// GSON
+	compile("com.google.code.gson:gson:2.5")
+	// Json-Simple
+	compile("com.googlecode.json-simple:json-simple:1.1.1")
 	
 	// Common
 	compile("commons-lang:commons-lang:2.6")
@@ -51,5 +58,5 @@ dependencies {
 	compile("org.apache.commons:commons-io:1.3.2")
 	
 	// JUnit
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+	// testCompile('org.springframework.boot:spring-boot-starter-test')
 }
