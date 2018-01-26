@@ -1,10 +1,9 @@
 package com.java.sample;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 
 public class AssertSample {
 	public static void main(String[] args) throws Exception {
@@ -12,7 +11,19 @@ public class AssertSample {
 	}
 
 	public void sample(String value) throws Exception {
+		List<String> list = new ArrayList<String>();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add(null);
+		list.add("");
 		
+		
+		list.removeAll(Collections.singleton("A"));
+		list.removeAll(Collections.singleton(null));
+		
+		
+		System.out.print("DD");
 	}
 
 }
