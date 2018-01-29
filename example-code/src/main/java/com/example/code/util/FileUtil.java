@@ -1,4 +1,3 @@
-/* Copyright © HatioLab Inc. All rights reserved. */
 package com.example.code.util;
 
 import java.io.BufferedWriter;
