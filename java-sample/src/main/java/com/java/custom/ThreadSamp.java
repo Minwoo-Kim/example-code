@@ -1,4 +1,4 @@
-package com.java.sample.zcustom;
+package com.java.custom;
 
 public class ThreadSamp {
 

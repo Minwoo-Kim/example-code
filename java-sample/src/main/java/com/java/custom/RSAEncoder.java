@@ -1,4 +1,4 @@
-package com.java.sample.zcustom;
+package com.java.custom;
 
 import java.io.BufferedWriter;
 import java.io.File;

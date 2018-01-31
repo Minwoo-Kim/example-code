@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.java.sample.zcustom;
+package com.java.custom;
 
 import java.net.URL;
 import java.net.URLConnection;
