@@ -13,9 +13,9 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 
 @SuppressWarnings("unused")
-public class TimpSamp {
+public class TimeSamp {
 	public static void main(String[] args) {
-		TimpSamp localDateSamp = new TimpSamp();
+		TimeSamp localDateSamp = new TimeSamp();
 		localDateSamp.samp();
 	}
 
