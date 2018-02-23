@@ -27,6 +27,8 @@ dependencies {
     compile("org.apache.tomcat.embed:tomcat-embed-logging-juli:${embedTomcatVersion}")
     compile("org.apache.tomcat.embed:tomcat-embed-websocket:${embedTomcatVersion}")
     
+	compile("org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}")
+    
     // JDBC
     compile("commons-dbcp:commons-dbcp:1.4")
 	compile("org.springframework:spring-jdbc:4.3.6.RELEASE")

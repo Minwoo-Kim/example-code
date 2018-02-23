@@ -23,6 +23,7 @@ public class TimeSamp {
 		// 컴퓨터의 현재 날짜 정보를 저장한 LocalDate 객체를 리턴한다. 결과 : 2018-01-31
 		LocalDate currentDate = LocalDate.now();
 		LocalDate targetDate = LocalDate.of(2018, 01, 31);
+		LocalDate parseDate = LocalDate.parse("2018-01-31");
 
 		// 파라미터로 주어진 시간 정보를 저장한 LocalTime 객체를 리턴한다. 컴퓨터의 현재 시간 정보. 결과 : 16:24:02.408
 		LocalTime currentTime = LocalTime.now();
