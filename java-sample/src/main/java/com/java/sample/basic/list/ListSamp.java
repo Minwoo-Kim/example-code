@@ -1,4 +1,4 @@
-package com.java.sample.basic;
+package com.java.sample.basic.list;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +9,7 @@ import java.util.List;
 public class ListSamp {
 	public static void main(String[] args) {
 		ListSamp samp = new ListSamp();
+		samp.indexOf();
 	}
 	
 	
@@ -72,5 +73,16 @@ public class ListSamp {
 
 		list.removeAll(Collections.singleton("A"));
 		list.removeAll(Collections.singleton(null));
+	}
+	
+	public void indexOf() {
+		List<String> list = new ArrayList<String>();
+		list.add("A");
+		list.add("B");
+		list.add("A");
+		list.add(null);
+		list.add("");
+		int index = list.indexOf("dddA");
+		System.out.println(index);
 	}
 }
