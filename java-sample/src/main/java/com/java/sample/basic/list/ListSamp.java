@@ -9,10 +9,9 @@ import java.util.List;
 public class ListSamp {
 	public static void main(String[] args) {
 		ListSamp samp = new ListSamp();
-		samp.indexOf();
+		samp.sort();
 	}
-	
-	
+
 	/**
 	 * Empty List 생성.
 	 */
@@ -74,7 +73,7 @@ public class ListSamp {
 		list.removeAll(Collections.singleton("A"));
 		list.removeAll(Collections.singleton(null));
 	}
-	
+
 	public void indexOf() {
 		List<String> list = new ArrayList<String>();
 		list.add("A");
@@ -82,7 +81,25 @@ public class ListSamp {
 		list.add("A");
 		list.add(null);
 		list.add("");
-		int index = list.indexOf("dddA");
+		int index = list.indexOf("A");
 		System.out.println(index);
+	}
+
+	public void sort() {
+		List<String> list = new ArrayList<String>();
+		list.add("A-2");
+		list.add("B-1");
+		list.add("A-3");
+		list.add("D-5");
+		list.add("E-0");
+		
+		list.sort((name1, name2) -> {
+			int name1Index = Integer.parseInt(name1.substring(2));
+			int name2Index = Integer.parseInt(name2.substring(2));
+
+			return name1Index - name2Index;
+		});
+		
+		System.out.println("End");
 	}
 }
