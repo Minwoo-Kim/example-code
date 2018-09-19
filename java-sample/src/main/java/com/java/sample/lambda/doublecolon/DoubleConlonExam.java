@@ -13,6 +13,9 @@ public class DoubleConlonExam {
 	public static void main(String[] args) {
 		DoubleConlonExam doubleConlonExam = new DoubleConlonExam();
 		doubleConlonExam.example1();
+		doubleConlonExam.example2();
+		doubleConlonExam.example3();
+		doubleConlonExam.example4();
 	}
 
 	public void example1() {
@@ -48,7 +51,7 @@ public class DoubleConlonExam {
 	public void example3() {
 		Computer c1 = new Computer(2015, "white", 100);
 		Computer c2 = new MacbookPro(2009, "black", 100);
-
+		
 		List<Computer> inventory = Arrays.asList(c1, c2);
 		inventory.forEach(Computer::turnOnPc);
 	}
@@ -60,7 +63,11 @@ public class DoubleConlonExam {
 		TriFunction<Integer, String, Integer, Computer> c6Function = Computer::new;
 		Computer c3 = c6Function.apply(2008, "black", 90);
 
+		Function<Integer, Computer> computerCreator = Computer::new;
+		Computer computer1 = computerCreator.apply(1);
+
 		Function<Integer, Computer[]> computerCreator2 = Computer[]::new;
 		Computer[] computerArray2 = computerCreator2.apply(5);
+
 	}
 }

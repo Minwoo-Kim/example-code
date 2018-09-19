@@ -5,12 +5,16 @@ public class Computer {
 	private String color;
 	private Integer healty;
 
-	Computer(final int age, final String color) {
+	Computer(Integer age) {
+		this.age = age;
+	}
+
+	Computer(Integer age, String color) {
 		this.age = age;
 		this.color = color;
 	}
 
-	Computer(final Integer age, final String color, final Integer healty) {
+	Computer(Integer age, String color, Integer healty) {
 		this.age = age;
 		this.color = color;
 		this.healty = healty;
