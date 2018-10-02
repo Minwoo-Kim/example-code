@@ -1,0 +1,54 @@
+buildscript {
+	ext {
+		baseUrl = "http://repo.hatiolab.com/nexus/content";
+		springBootVersion = '1.4.4.RELEASE'
+	}
+	repositories {
+		maven {
+			url baseUrl + '/groups/elidom-repository/'
+			//maven { url 'http://repo.spring.io/plugins-release' }
+		}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.springframework.build.gradle:propdeps-plugin:0.0.7")		 
+	}
+}
+
+apply from : 'elings.gradle'
+apply plugin: 'org.springframework.boot'
+	
+configurations {
+	provided.all*.exclude group: 'javax.servlet'
+}
+
+jar {	
+	manifest {
+		attributes 'Implementation-Title': 'Scada', 'Implementation-Version': version
+	}
+}
+
+repositories {
+	maven {
+		url baseUrl + '/groups/elidom-repository/'
+	}
+	// mavenCentral()
+}
+
+ext {
+	springBootVersion = '1.4.4.RELEASE'
+			
+	elingsUtilVersion = getLastVersion('elings-util')
+//	elingsExceptionVersion = getLastVersion('elings-exception')
+//	elingsDbistVersion = getLastVersion('elings-dbist')
+//	elingsAdminCliVersion = getLastVersion('elings-admin-cli')
+}
+
+dependencies {
+	// Spring Boot - Default
+	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+	// Socket - Mina
+	compile("org.apache.mina:mina-core:2.0.16")
+	
+	compile("com.hatiolab:elings-util:${elingsUtilVersion}")
+}
