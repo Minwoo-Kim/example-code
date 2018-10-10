@@ -16,6 +16,7 @@ public class FunctionExam2 {
 	public void example1() {
 		Function<Integer, User> userFunction = User::new;
 		User user = userFunction.apply(10);
+		User user2 = userFunction.apply(5);
 
 		Function<Integer, User[]> uesrArrayFunction = User[]::new;
 		User[] userArray = uesrArrayFunction.apply(5);
