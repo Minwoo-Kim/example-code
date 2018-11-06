@@ -147,21 +147,20 @@ public class HttpUtil {
 		connection.setDoOutput(true);
 		connection.setDoInput(true);
 
-		OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
-		osw.write(params);
-		osw.flush();
+		try (OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
+				BufferedReader bfReader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))) {
 
-		BufferedReader bfReader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+			osw.write(params);
+			osw.flush();
 
-		String value = "";
-		StringBuilder response = new StringBuilder();
-		while ((value = bfReader.readLine()) != null) {
-			response.append(value);
+			String value = "";
+			StringBuilder response = new StringBuilder();
+			while ((value = bfReader.readLine()) != null) {
+				response.append(value);
+			}
+
+			return response.toString();
 		}
-
-		osw.close();
-		bfReader.close();
-		return response.toString();
 	}
 
 	/**

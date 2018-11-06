@@ -1,6 +1,7 @@
 package com.java.sample.basic.sp_list;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -72,6 +73,18 @@ public class ListSampOne {
 		System.out.println("---After Sorting---");
 		list.forEach(style);
 
+	}
+	
+	private void sortDemo2(List<Person> list) {
+		Consumer<Person> style = (Person p) -> System.out.println("id:" + p.getPid() + ", Name:" + p.getName());
+
+		System.out.println("---Before Sorting---");
+		list.forEach(style);
+
+		list.sort(Comparator.comparing(Person::getPid));
+
+		System.out.println("---After Sorting---");
+		list.forEach(System.out::println);
 	}
 
 	private Person modifyName(Person p) {
