@@ -21,9 +21,8 @@ public class PrintUtil {
 			}
 		}
 
-		if (printService == null) {
+		if (printService == null)
 			throw new IllegalArgumentException("Invalid Print Name.");
-		}
 
 		return printService;
 	}
