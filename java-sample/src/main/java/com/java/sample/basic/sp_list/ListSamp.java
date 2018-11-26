@@ -2,14 +2,17 @@ package com.java.sample.basic.sp_list;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+
+import com.java.sample.basic.sp_list.vo.Person;
 
 @SuppressWarnings("unused")
 public class ListSamp {
 	public static void main(String[] args) {
 		ListSamp samp = new ListSamp();
-		samp.sort();
+		samp.sort2();
 	}
 
 	/**
@@ -100,6 +103,29 @@ public class ListSamp {
 			return name1Index - name2Index;
 		});
 		
+		System.out.println("End");
+	}
+	
+	public void sort2() {
+		List<Person> list = new ArrayList<Person>();
+
+		for (int i = 0; i < 10; i++) {
+			int no = (int) (Math.random() * 100);
+
+			Person person = new Person();
+			person.setName("Name-".concat(Integer.toString(no)));
+			person.setPid(i);
+
+			list.add(person);
+		}
+
+		list.sort(Comparator.comparing(Person::getName));
+
+		list.forEach(p -> System.out.println(p.getName()));
+		list.forEach(System.out::println);
+		
+		list.stream().forEach(System.out::println);
+
 		System.out.println("End");
 	}
 }
