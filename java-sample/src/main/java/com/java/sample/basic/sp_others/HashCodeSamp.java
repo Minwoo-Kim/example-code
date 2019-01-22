@@ -1,4 +1,4 @@
-package com.java.sample.basic.sp_basic;
+package com.java.sample.basic.sp_others;
 
 import java.util.Arrays;
 import java.util.List;
