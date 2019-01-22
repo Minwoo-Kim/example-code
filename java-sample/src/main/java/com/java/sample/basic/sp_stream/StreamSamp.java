@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+@SuppressWarnings("unused")
 public class StreamSamp {
 
 	public static void main(String[] args) {

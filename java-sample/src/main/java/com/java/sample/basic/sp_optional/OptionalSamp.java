@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 
 import com.java.sample.basic.sp_optional.vo.Student;
 
+@SuppressWarnings("unused")
 public class OptionalSamp {
 
 	public static void main(String[] args) {

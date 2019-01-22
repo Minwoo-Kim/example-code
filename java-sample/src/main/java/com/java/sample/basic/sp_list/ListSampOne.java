@@ -9,6 +9,7 @@ import java.util.function.UnaryOperator;
 
 import com.java.sample.basic.sp_list.vo.Person;
 
+@SuppressWarnings("unused")
 public class ListSampOne {
 	public static void main(String[] args) {
 		ListSampOne demo = new ListSampOne();
