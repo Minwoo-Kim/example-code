@@ -32,6 +32,7 @@ public class TimeSamp {
 		// 컴퓨터의 현재 날짜와 시간 정보. 결과 : 2018-01-31T11:37:30.000000345
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		LocalDateTime targetDateTime = LocalDateTime.of(2018, 01, 31, 11, 37, 30, 345);
+		LocalDateTime parseDateTime = LocalDateTime.parse("2018-12-26T17:18:10.535");
 
 		// 2018-01-31T02:38:31.863Z[UTC]
 		ZonedDateTime utcDateTime = ZonedDateTime.now(ZoneId.of("UTC"));

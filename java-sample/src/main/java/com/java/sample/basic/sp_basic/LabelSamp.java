@@ -1,4 +1,4 @@
-package com.java.sample.basic.sp_label;
+package com.java.sample.basic.sp_basic;
 
 import java.util.ArrayList;
 import java.util.List;

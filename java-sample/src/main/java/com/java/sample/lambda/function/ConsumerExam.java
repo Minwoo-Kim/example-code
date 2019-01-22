@@ -21,7 +21,7 @@ public class ConsumerExam {
 		ObjIntConsumer<String> objIntConsumer = (t, i) -> System.out.println(t + i);
 		objIntConsumer.accept("자바", 8);
 
-		Consumer<String> param = t -> System.out.println("Start");
+		Consumer<String> param = t -> System.out.println(t + "Start");
 		Consumer<String> result = lambdaWrapper(param);
 		result.accept("End");
 	}
@@ -37,7 +37,7 @@ public class ConsumerExam {
 		};
 	}
 
-	static <T, E extends Exception> Consumer<T> consumerWrapper(Consumer<T> consumer, Class<E> clazz) {
+	public static <T, E extends Exception> Consumer<T> consumerWrapper(Consumer<T> consumer, Class<E> clazz) {
 		return i -> {
 			try {
 				consumer.accept(i);

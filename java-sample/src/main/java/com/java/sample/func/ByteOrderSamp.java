@@ -52,7 +52,7 @@ public class ByteOrderSamp {
 	}
 
 	/**
-	 * byte배열을 int형로 바꿈<br>
+	 * byte배열을 int형로 바꿈
 	 * 
 	 * @param bytes
 	 * @param order
