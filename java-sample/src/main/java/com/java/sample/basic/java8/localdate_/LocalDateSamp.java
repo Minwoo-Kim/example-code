@@ -25,6 +25,10 @@ public class LocalDateSamp {
 		LocalDate targetDate = LocalDate.of(2018, 01, 31);
 		LocalDate parseDate = LocalDate.parse("2018-01-31");
 
+		// Minus
+		LocalDate parseDate2 = LocalDate.parse("20180131", DateTimeFormatter.BASIC_ISO_DATE);
+		String minusOne = parseDate2.minusDays(1).format(DateTimeFormatter.BASIC_ISO_DATE);
+
 		// 파라미터로 주어진 시간 정보를 저장한 LocalTime 객체를 리턴한다. 컴퓨터의 현재 시간 정보. 결과 : 16:24:02.408
 		LocalTime currentTime = LocalTime.now();
 		LocalTime targetTime = LocalTime.of(11, 34, 30, 345);
