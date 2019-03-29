@@ -15,9 +15,9 @@ public class OptionalSamp {
 
 	public static void main(String[] args) {
 		OptionalSamp samp = new OptionalSamp();
-		// samp.samp1();
+		samp.samp1();
 		// samp.compareMapAndFlatMap();
-		samp.filter();
+		// samp.filter();
 	}
 
 	public void samp1() {
@@ -36,6 +36,9 @@ public class OptionalSamp {
 
 		// 내부적으로 값이 null 일 경우 Optional.empty(), 값이 존재 할 경우 Optional.of() 수행.
 		Optional<String> ofNullableOjb = Optional.ofNullable("Nullable Sample");
+
+		Optional<String> isNullableOjb = Optional.ofNullable(null);
+		boolean isPresent = isNullableOjb.isPresent();
 
 		ofObj.ifPresent(System.out::println);
 		ofNullableOjb.ifPresent(System.out::println);
